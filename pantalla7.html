@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Olfativa</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+        }
+        .rating input {
+            display: none;
+        }
+        .rating label {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            background-color: #ddd;
+            border-radius: 50%;
+        }
+        .rating input:checked ~ label,
+        .rating input:checked ~ label ~ label {
+            background-color: #f1c40f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Evaluación Olfativa</h1>
+        <form id="evaluacion-olfativa-form">
+            <div class="form-group">
+                <label>Intensidad del Aroma: Muy Débil (1) a Muy Intensa (5)</label>
+                <div class="rating">
+                    <input type="radio" name="intensidad_aroma" value="1" id="intensidad_aroma1"><label for="intensidad_aroma1"></label>
+                    <input type="radio" name="intensidad_aroma" value="2" id="intensidad_aroma2"><label for="intensidad_aroma2"></label>
+                    <input type="radio" name="intensidad_aroma" value="3" id="intensidad_aroma3"><label for="intensidad_aroma3"></label>
+                    <input type="radio" name="intensidad_aroma" value="4" id="intensidad_aroma4"><label for="intensidad_aroma4"></label>
+                    <input type="radio" name="intensidad_aroma" value="5" id="intensidad_aroma5"><label for="intensidad_aroma5"></label>
+                </div>
+                <textarea class="form-control mt-2" placeholder="Comentarios sobre la intensidad del aroma"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Tipo de Aroma:</label>
+                <textarea class="form-control" placeholder="Describe el tipo de aroma (frutal, floral, etc.)"></textarea>
+                <textarea class="form-control mt-2" placeholder="Comentarios adicionales sobre el tipo de aroma"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Siguiente</button>
+            <button type="button" class="btn btn-secondary" onclick="window.history.back()">Atrás</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('evaluacion-olfativa-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = 'pantalla8.html'; // Redirige a la pantalla de evaluación gustativa
+        });
+    </script>
+</body>
+</html>

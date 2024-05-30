@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación de Satisfacción Global</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+        }
+        .rating input {
+            display: none;
+        }
+        .rating label {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            background-color: #ddd;
+            border-radius: 50%;
+        }
+        .rating input:checked ~ label,
+        .rating input:checked ~ label ~ label {
+            background-color: #f1c40f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Evaluación de Satisfacción Global</h1>
+        <form id="satisfaccion-global-form">
+            <div class="form-group">
+                <label>Satisfacción Global: Desde Muy Insatisfecho (1) a Muy Satisfecho (5)</label>
+                <div class="rating">
+                    <input type="radio" name="satisfaccion_global" value="1" id="satisfaccion_global1"><label for="satisfaccion_global1"></label>
+                    <input type="radio" name="satisfaccion_global" value="2" id="satisfaccion_global2"><label for="satisfaccion_global2"></label>
+                    <input type="radio" name="satisfaccion_global" value="3" id="satisfaccion_global3"><label for="satisfaccion_global3"></label>
+                    <input type="radio" name="satisfaccion_global" value="4" id="satisfaccion_global4"><label for="satisfaccion_global4"></label>
+                    <input type="radio" name="satisfaccion_global" value="5" id="satisfaccion_global5"><label for="satisfaccion_global5"></label>
+                </div>
+                <textarea class="form-control mt-2" placeholder="Comentarios sobre la satisfacción global"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Evaluación</button>
+            <button type="button" class="btn btn-secondary" onclick="window.history.back()">Atrás</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('satisfaccion-global-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            localStorage.setItem('descriptivaCompleta', true);
+            if (localStorage.getItem('afectivaCompleta')) {
+                window.location.href = 'pantalla11.html'; // Redirige a la pantalla de enviar resultados
+            } else {
+                window.location.href = 'pantalla2.html'; // Redirige a la pantalla de selección de prueba
+            }
+        });
+    </script>
+</body>
+</html>

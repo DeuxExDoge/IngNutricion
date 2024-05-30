@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Gustativa</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+        }
+        .rating input {
+            display: none;
+        }
+        .rating label {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            background-color: #ddd;
+            border-radius: 50%;
+        }
+        .rating input:checked ~ label,
+        .rating input:checked ~ label ~ label {
+            background-color: #f1c40f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Evaluación Gustativa</h1>
+        <form id="evaluacion-gustativa-form">
+            <div class="form-group">
+                <label>Intensidad del Sabor: Muy Débil (1) a Muy Intensa (5)</label>
+                <div class="rating">
+                    <input type="radio" name="intensidad_sabor" value="1" id="intensidad_sabor1"><label for="intensidad_sabor1"></label>
+                    <input type="radio" name="intensidad_sabor" value="2" id="intensidad_sabor2"><label for="intensidad_sabor2"></label>
+                    <input type="radio" name="intensidad_sabor" value="3" id="intensidad_sabor3"><label for="intensidad_sabor3"></label>
+                    <input type="radio" name="intensidad_sabor" value="4" id="intensidad_sabor4"><label for="intensidad_sabor4"></label>
+                    <input type="radio" name="intensidad_sabor" value="5" id="intensidad_sabor5"><label for="intensidad_sabor5"></label>
+                </div>
+                <textarea class="form-control mt-2" placeholder="Comentarios sobre la intensidad del sabor"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Tipo de Sabor:</label>
+                <textarea class="form-control" placeholder="Describe el tipo de sabor (dulce, salado, ácido, etc.)"></textarea>
+                <textarea class="form-control mt-2" placeholder="Comentarios adicionales sobre el tipo de sabor"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Siguiente</button>
+            <button type="button" class="btn btn-secondary" onclick="window.history.back()">Atrás</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('evaluacion-gustativa-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = 'pantalla9.html'; // Redirige a la pantalla de evaluación de textura
+        });
+    </script>
+</body>
+</html>

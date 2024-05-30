@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Sensorial Afectiva Detallada</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+        }
+        .rating input {
+            display: none;
+        }
+        .rating label {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            background-color: #ddd;
+            border-radius: 50%;
+        }
+        .rating input:checked ~ label,
+        .rating input:checked ~ label ~ label {
+            background-color: #f1c40f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Evaluación Sensorial Afectiva Detallada</h1>
+        <form id="afectiva-evaluacion-form">
+            <div class="form-group">
+                <label>Visual - Apariencia: Muy Desagradable (1) a Muy Agradable (5)</label>
+                <div class="rating">
+                    <input type="radio" name="apariencia" value="1" id="apariencia1"><label for="apariencia1"></label>
+                    <input type="radio" name="apariencia" value="2" id="apariencia2"><label for="apariencia2"></label>
+                    <input type="radio" name="apariencia" value="3" id="apariencia3"><label for="apariencia3"></label>
+                    <input type="radio" name="apariencia" value="4" id="apariencia4"><label for="apariencia4"></label>
+                    <input type="radio" name="apariencia" value="5" id="apariencia5"><label for="apariencia5"></label>
+                </div>
+                <textarea class="form-control mt-2" placeholder="Comentarios sobre la apariencia"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Olfato - Aroma: Muy Desagradable (1) a Muy Agradable (5)</label>
+                <div class="rating">
+                    <input type="radio" name="aroma" value="1" id="aroma1"><label for="aroma1"></label>
+                    <input type="radio" name="aroma" value="2" id="aroma2"><label for="aroma2"></label>
+                    <input type="radio" name="aroma" value="3" id="aroma3"><label for="aroma3"></label>
+                    <input type="radio" name="aroma" value="4" id="aroma4"><label for="aroma4"></label>
+                    <input type="radio" name="aroma" value="5" id="aroma5"><label for="aroma5"></label>
+                </div>
+                <textarea class="form-control mt-2" placeholder="Comentarios sobre el aroma"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Gusto - Sabor: Muy Desagradable (1) a Muy Agradable (5)</label>
+                <div class="rating">
+                    <input type="radio" name="sabor" value="1" id="sabor1"><label for="sabor1"></label>
+                    <input type="radio" name="sabor" value="2" id="sabor2"><label for="sabor2"></label>
+                    <input type="radio" name="sabor" value="3" id="sabor3"><label for="sabor3"></label>
+                    <input type="radio" name="sabor" value="4" id="sabor4"><label for="sabor4"></label>
+                    <input type="radio" name="sabor" value="5" id="sabor5"><label for="sabor5"></label>
+                </div>
+                <textarea class="form-control mt-2" placeholder="Comentarios sobre el sabor"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Textura - Sensación al Tacto (Boca): Muy Desagradable (1) a Muy Agradable (5)</label>
+                <div class="rating">
+                    <input type="radio" name="textura" value="1" id="textura1"><label for="textura1"></label>
+                    <input type="radio" name="textura" value="2" id="textura2"><label for="textura2"></label>
+                    <input type="radio" name="textura" value="3" id="textura3"><label for="textura3"></label>
+                    <input type="radio" name="textura" value="4" id="textura4"><label for="textura4"></label>
+                    <input type="radio" name="textura" value="5" id="textura5"><label for="textura5"></label>
+                </div>
+                <textarea class="form-control mt-2" placeholder="Comentarios sobre la textura"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Satisfacción Global: Muy Insatisfecho (1) a Muy Satisfecho (5)</label>
+                <div class="rating">
+                    <input type="radio" name="satisfaccion" value="1" id="satisfaccion1"><label for="satisfaccion1"></label>
+                    <input type="radio" name="satisfaccion" value="2" id="satisfaccion2"><label for="satisfaccion2"></label>
+                    <input type="radio" name="satisfaccion" value="3" id="satisfaccion3"><label for="satisfaccion3"></label>
+                    <input type="radio" name="satisfaccion" value="4" id="satisfaccion4"><label for="satisfaccion4"></label>
+                    <input type="radio" name="satisfaccion" value="5" id="satisfaccion5"><label for="satisfaccion5"></label>
+                </div>
+                <textarea class="form-control mt-2" placeholder="Comentarios sobre la satisfacción global"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Intención de Compra: Definitivamente No Compraría (1) a Definitivamente Compraría (5)</label>
+                <div class="rating">
+                    <input type="radio" name="compra" value="1" id="compra1"><label for="compra1"></label>
+                    <input type="radio" name="compra" value="2" id="compra2"><label for="compra2"></label>
+                    <input type="radio" name="compra" value="3" id="compra3"><label for="compra3"></label>
+                    <input type="radio" name="compra" value="4" id="compra4"><label for="compra4"></label>
+                    <input type="radio" name="compra" value="5" id="compra5"><label for="compra5"></label>
+                </div>
+                <textarea class="form-control mt-2" placeholder="Comentarios sobre la intención de compra"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Evaluación</button>
+            <button type="button" class="btn btn-secondary" onclick="window.history.back()">Atrás</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('afectiva-evaluacion-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Aquí puedes agregar lógica para guardar los datos
+            localStorage.setItem('afectivaCompleta', true);
+            if (localStorage.getItem('descriptivaCompleta')) {
+                window.location.href = 'pantalla11.html'; // Redirige a la pantalla de enviar resultados
+            } else {
+                window.location.href = 'pantalla2.html'; // Redirige a la pantalla de selección de prueba
+            }
+        });
+    </script>
+</body>
+</html>

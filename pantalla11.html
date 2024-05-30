@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Resultados</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Enviar Resultados</h1>
+        <p>Has completado todas las pruebas. Ahora puedes enviar tus resultados.</p>
+        <button class="btn btn-primary" onclick="enviarResultados()">Enviar Resultados</button>
+        <button class="btn btn-secondary" onclick="window.location.href='pantalla2.html'">Atrás</button>
+    </div>
+    <script>
+        function enviarResultados() {
+            // agregar lógica para enviar los datos
+            localStorage.removeItem('afectivaCompleta');
+            localStorage.removeItem('descriptivaCompleta');
+            alert('Resultados enviados con éxito');
+            window.location.href = 'pantalla1.html'; // Redirige a la pantalla de inicio
+        }
+    </script>
+</body>
+</html>
